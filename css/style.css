@@ -12,6 +12,13 @@ body {
 	z-index:1;
 }
 
+.top-bg {
+	width: 10rem;
+	height: 1.866667rem;
+	background: url('../img/top_bg.jpg');
+	background-size: 10rem 1.866667rem;
+}
+
 .top {
 	width: 10rem;
 	height: 1.53rem;
