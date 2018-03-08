@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="Author" content="Ljj">
+<meta name="Keywords" content="宝贝听听|妈妈咪鸭|睡前故事|企鹅童话公司"/>
+<meta name="Description" content="宝贝听听-企鹅童话公司出品的儿童音频内容平台"/>
+
+<script src="./js/flexible.js"></script>
+<script src="./js/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css"  href="css/style.css">
+<title>听《妈妈咪鸭》有声故事领电影票</title>
+</head>
+<body>
+<div class="wraper">
+	<div class=top>		
+		妈妈咪鸭
+	</div>
+<div class="mid">
+	<div class="album">
+		<a class="play-btn" href="javascript:playPause();">
+			<img class="btn-img" src="./img/btn_play.png">
+		</a>
+		<audio class="music" src="http://3gimg.qq.com/BabyTingPicAudio/webapp/001kids.mp3"></audio>
+	</div>
+	<div class="album-info">第01/18集&nbsp;&nbsp;&nbsp;&nbsp;恶作剧之王驾到</div>
+	<div class="free-box">
+		<a class="free-test" href="javascript:playPause();">免费试听</a>
+		<div class="to-buy">18元抢购</div>
+	</div>
+	<div class="introduct">
+		<div class="active-content">
+			<div class="cross-line"></div>
+			<div class="introduct-title">活动介绍</div>
+			<div class="cross-line"></div>
+		</div>
+		<div class="introduct-text">3月9日《妈妈咪鸭》大电影全国上映，下载宝贝听听app购买有声故事，立得2张电影票，限量200张，看谁手快！</div>
+	</div>
+</div>
+<div class="bottom">
+	<img class="ting-logo" src="./img/ting-logo.png">
+	<div class="ting-content">
+		<div class="ting-name">宝贝听听</div>
+		<div class="ting-introduct">千万家庭选择,给孩子一个有故事的童年</div>
+	</div>
+	<div class="download">下载</div>
+</div>
+	
+</div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		/*请求统计接口*/
+		// $.get('http://test.joymis.ieg.qq.com/reader/shareStat/singleGameShare?t=2');
+		
+
+		
+		var music = document.querySelector('.music');
+		var music_btn = document.querySelector('.btn-img'); 
+	    
+	    var ua = window.navigator.userAgent.toLowerCase();
+	    var isWX= ua.match(/MicroMessenger/i) == 'micromessenger';
+	    var isiOS = !!ua.match(/\(i[^;]+;( u;)? cpu.+mac os x/);
+	    
+	    //通过正则表达式匹配ua中IOS和微信头
+	    if(isWX=true&&isiOS==true||isiOS==true){
+	    	music_btn.src = './img/btn_play.png';
+	    } else {
+	    	music.play();
+	    }
+	    music.addEventListener('ended', function () {  
+	    	music.pause();
+	    	music_btn.src = './img/btn_play.png';
+	    	console.log('audioEnd')
+    	}, false);
+
+		/*点击下载跳转*/
+		$(".to-buy").click(function () {
+			if (/iphone|ipad|ipod/.test(ua)) {
+				location.href = "https://itunes.apple.com/cn/app/bao-bei-ting-ting-er-ge-er/id480111612?mt=8";				
+				console.log('ios')
+			} else if (/android/.test(ua)){
+				location.href = "http://kpwebproxy.3g.qq.com/proxy.php?type=1164";
+				console.log('安卓')
+			}
+		});
+
+		$(".download").click(function () {
+			if (/iphone|ipad|ipod/.test(ua)) {
+				location.href = "https://itunes.apple.com/cn/app/bao-bei-ting-ting-er-ge-er/id480111612?mt=8";
+				console.log('ios')
+			} else if (/android/.test(ua)) {
+				location.href = "http://kpwebproxy.3g.qq.com/proxy.php?type=1164";
+				console.log('安卓')
+			}
+		});
+    	
+	});
+	
+	function playPause() { 
+	    var music = document.querySelector('.music'); 
+	    var music_btn = document.querySelector('.btn-img'); 
+	    if (music.paused){ 
+	        music.play(); 
+	        music_btn.src = './img/btn_pause.png';
+	    } 
+	    else{ 
+	        music.pause(); 
+	        music_btn.src = './img/btn_play.png';
+	    } 
+	} 
+</script>
+</html>
