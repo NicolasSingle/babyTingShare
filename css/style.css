@@ -21,11 +21,11 @@ body {
 
 .top {
 	width: 10rem;
-	height: 1.53rem;
-	line-height: 1.53rem;
+	height: 1.7rem;
+	line-height: 1.7rem;
 	margin-top: .4rem;
 	text-align: center;
-	font-size: 0.46rem;
+	font-size: 0.4rem;
 	color: #333;
 }
 
@@ -66,7 +66,7 @@ body {
 	text-align: center;
 	line-height: 2rem;
 	font-size: 0.33rem;
-	color: #333;
+	color: #999;
 }
 
 .free-box {
@@ -131,18 +131,18 @@ a:hover {
 	width: 1.6rem;
 	height: 0.4rem;
 	line-height: 0.4rem;
-	color: #999;
+	color: #666;
 	float: left;
-	font-size: 0.3rem;
+	font-size: .306667rem;
 }
 
 .introduct-text {
 	margin: 0 auto;
-	width: 7.6rem;
+	width: 7.8rem;
 	height: 1.6rem;
 	margin-top: 0.5rem;
-	font-size: .3rem;
-	color: #999;
+	font-size: .306667rem;
+	color: #666;
 	text-align: left;
 }
 
