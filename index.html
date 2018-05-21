@@ -182,6 +182,24 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 				music_btn.src = './img/btn_play.png';
 			} 
 		});
+
+
+		$.ajax({
+			type: 'POST',
+			url: "http://babyting.kf0309.3g.qq.com/get_activity",
+			data: {
+				activity_id: 1
+			},
+			dataType: "json",
+			success: function (res) {
+				console.log(res)
+				alert(JSON.stringify(res))
+			},
+			error: function (err) {
+				console.log(err)
+				alert(JSON.stringify(err))
+			}
+		});
     	
 	});
 	
